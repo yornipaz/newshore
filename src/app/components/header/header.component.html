@@ -1,1 +1,62 @@
-<p>header works!</p>
+
+<div class="container">
+  <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+    <div class="container">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand mr-auto" routerLink="/">HarryApp</a>
+      <div class="collapse navbar-collapse ml-2" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-2 ">
+          <li class="nav-item active">
+            <a class="nav-link" routerLink="/"
+              ><span class="fa fa-home fa-lg"></span> Home</a
+            >
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              routerLink="/"
+              class="nav-link dropdown-toggle"
+              id="navbarDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Houses
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" routerLink="/house/ravenclaw"
+                >Ravenclaw</a
+              >
+              <a class="dropdown-item" routerLink="/house/gryffindor"
+                >Gryffindor</a
+              >
+              <a class="dropdown-item" routerLink="/house/hufflepuff"
+                >Hufflepuff</a
+              >
+              <a class="dropdown-item" routerLink="/house/slytherin"
+                >Slytherin</a
+              >
+            </div>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" routerLink="/filter-characters"
+              ><span class="fa fa-home fa-lg"></span> Filter</a
+            >
+          </li>
+        </ul>
+        <app-search ></app-search>
+        
+      </div>
+    </div>
+  </nav>
+</div>
+

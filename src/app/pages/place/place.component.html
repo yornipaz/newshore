@@ -1,1 +1,11 @@
-<p>place works!</p>
+<app-header></app-header>
+<div class="container ">
+    <div class="row row-cols-1 row-cols-md-3 ">
+        <div class=" col-12 col-sm-6 col-lg-3 col-xl-3 mb-3" *ngFor="let character of characters">
+            <app-character [character]="character"></app-character>
+        </div>
+    </div>
+    
+
+   
+</div>

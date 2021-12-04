@@ -1,1 +1,35 @@
-<p>character works!</p>
+<div class="container">
+  <div class="card text-center o-card">
+    <img
+      src="{{ character.image }}"
+      class="card-img-top o-card-img"
+      alt="{{ character.name }}"
+    />
+    <div class="card-body">
+      <h5 class="card-title">{{ character.name }}</h5>
+      <p class="card-text mb-2">
+        <strong> Bold Status :</strong
+        ><small>
+          {{
+            !character.ancestry.localeCompare("")
+              ? "Unspecified"
+              : character.ancestry
+          }}</small
+        >
+      </p>
+      <h6 class="card-subtitle mb-2">
+        <strong> Species : </strong
+        ><small>{{
+          !character.species.localeCompare("")
+            ? "Unspecified"
+            : character.species
+        }}</small>
+      </h6>
+
+      <h6 class="card-subtitle mb-2">
+        <strong>Alive : </strong>
+        <small>{{ character.alive ? "Live" : "Died" }}</small>
+      </h6>
+    </div>
+  </div>
+</div>

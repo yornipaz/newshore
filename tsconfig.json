@@ -9,6 +9,13 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
+    "paths": {
+      "@assets/*":["src/assets/*"],
+      "@components/*":["src/app/components/*"],
+      "@pages/*":["src/app/pages/*"],
+      "@services/*":["src/app/services/*"],
+      "@environment/*":["src/environments/*"]
+    },
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
