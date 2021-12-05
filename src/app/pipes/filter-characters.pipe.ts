@@ -17,7 +17,7 @@ export class FilterCharactersPipe implements PipeTransform {
       return characters.slice(page, page + 12);
     }
     
-    let filterCharacter = characters.filter(data => {
+    let filterCharacter = characters.filter((data) => {
    
       if (optionFilter === 'firstName') {
     
