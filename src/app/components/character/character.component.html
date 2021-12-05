@@ -1,13 +1,13 @@
-<div class="container">
+
   <div class="card text-center o-card">
     <img
       src="{{ character.image }}"
       class="card-img-top o-card-img"
-      alt="{{ character.name }}"
+      alt="{{ character.firstName+' '+ character.lastName}}"
     />
     <div class="card-body">
-      <h5 class="card-title">{{ character.name }}</h5>
-      <p class="card-text mb-2">
+      <h6 class="card-title">{{ character.firstName+' '+ character.lastName }}</h6>
+      <p class="card-text ">
         <strong> Bold Status :</strong
         ><small>
           {{
@@ -17,7 +17,7 @@
           }}</small
         >
       </p>
-      <h6 class="card-subtitle mb-2">
+      <h6 class="card-subtitle ">
         <strong> Species : </strong
         ><small>{{
           !character.species.localeCompare("")
@@ -26,10 +26,10 @@
         }}</small>
       </h6>
 
-      <h6 class="card-subtitle mb-2">
+      <h6 class="card-subtitle ">
         <strong>Alive : </strong>
         <small>{{ character.alive ? "Live" : "Died" }}</small>
       </h6>
     </div>
   </div>
-</div>
+

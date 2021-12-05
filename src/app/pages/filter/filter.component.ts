@@ -6,53 +6,61 @@ import { Character } from '@services/interface/character';
 @Component({
   selector: 'app-filter',
   templateUrl: './filter.component.html',
-  styleUrls: ['./filter.component.scss']
+  styleUrls: ['./filter.component.scss'],
 })
 export class FilterComponent implements OnInit {
-  querySearch: string = "";
-  alertShow: boolean = false;
-  private characters: Character[] = [];
-  filterCharacter: Character[] = [];
-  constructor(private api: CharacterService, private route: ActivatedRoute) { }
+  search: string = '';
+
+  characters: Character[] = [];
+  //filterCharacter: Character[] = [];
+  optionFilter: string;
+  options: string[];
+  page: number = 0;
+  items: number = 12;
+  constructor(private api: CharacterService) { //, private route: ActivatedRoute
+    this.options = ['Select Filter','lastName','firstName','species','patronus','ancestry','yearOfBirth','hairColour','gender'];
+    this.optionFilter = 'Select Filter';
+  }
 
   ngOnInit(): void {
-    this.getQuerySearch();
+    //this.getQuerySearch();
     this.getDataCharacter();
-
   }
-  private getQuerySearch(): void {
-    this.route.queryParams.subscribe(params => {
-      this.querySearch = params['search'];
+  prevPage() {
+    if (this.page > 0) {
+      this.page -= this.items;
+    }
+  }
+  nextPage() {
+    this.page += this.items;
+  }
+ /** private getQuerySearch(): void {
+    this.route.queryParams.subscribe((params) => {
+      this.search = params['search'];
 
-      this.filterCharacterByQuery(this.querySearch)
-
-
-
+      //this.filterCharacterByQuery(this.search);
     });
-
+  } */
+  onSearch(search: string) {
+    this.page=0;
+    this.search = search;
   }
   private getDataCharacter(): void {
-    this.api.getCharacters("").subscribe(data => {
-      this.characters = data
-      this.filterCharacter = data
-
-
-    })
+    this.api.getCharacters('').subscribe((data) => {
+      this.characters = data;
+      //this.filterCharacter = data;
+     
+    });
   }
-
-
+  /**
   private filterCharacterByQuery(query: string): void {
+    let filterCharacter = this.api.filterCharacterByQuery(
+      query,
+      this.characters
+    );
 
-    
-    let filterCharacter = this.api.filterCharacterByQuery(query,this.characters);
-    if (!filterCharacter.length){ 
-    alert(`El personaje buscado por el query de :${query} ,no se ha podido encontrar`)
-    }
-    this.filterCharacter = filterCharacter.length > 0 ? filterCharacter : this.characters
- 
-
-
-  }
-
-
+    this.filterCharacter =
+      filterCharacter.length > 0 ? filterCharacter : this.characters;
+    console.log(filterCharacter);
+  } */
 }

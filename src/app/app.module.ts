@@ -13,6 +13,9 @@ import { HouseComponent } from './components/house/house.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FilterComponent } from './pages/filter/filter.component';
+import { CommonModule } from '@angular/common';
+import { FilterCharactersPipe } from './pipes/filter-characters.pipe';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,13 +27,16 @@ import { FilterComponent } from './pages/filter/filter.component';
     HouseComponent,
     
     HomeComponent,
-    FilterComponent
+    FilterComponent,
+    FilterCharactersPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

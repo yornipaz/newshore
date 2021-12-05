@@ -13,7 +13,7 @@ export class SearchComponent implements OnInit {
   }
   onSearch(search: string) {
     if (search && search.length >= 2) {
-      this.router.navigate(['filter-characters'], { queryParams: { search: search } });
+      this.router.navigate(['filter'], { queryParams: { search: search } });
      
     }
   }

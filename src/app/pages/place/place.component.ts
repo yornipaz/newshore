@@ -32,7 +32,8 @@ export class PlaceComponent implements OnInit {
 
     this.apiCharacterService.getCharacters(endpoint).subscribe(data => {
       this.characters = [...this.characters, ...data];
-      console.log(data)
+      console.log(data);
+     
 
 
     })

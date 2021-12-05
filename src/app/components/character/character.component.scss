@@ -1,9 +1,11 @@
 $color-title:#0e1a40;
 $color-members: #946b2d;
-$font-size:.9rem;
+$font-size:.6rem;
 .o-card{
-    width: 14rem;
-    height:18rem;
+    width: 9rem;
+    height:13rem;
+    margin-bottom: 2rem;
+
     box-shadow: 0 5px 6px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
     .o-card-img{
         height: 10rem;
@@ -15,6 +17,7 @@ $font-size:.9rem;
             font-weight:700;
             color: $color-title;
             text-transform: capitalize;
+            font-size: 14px;
         }
         small{
             font-weight: 600;

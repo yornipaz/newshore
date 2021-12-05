@@ -1,18 +1,21 @@
-<div class="container ">
-    <div class="row o-row row-cols-1 row-cols-md-2 justify-content-center ">
-        <div class=" col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-3 " *ngFor="let house of houses">
-            <div class="card text-center  o-card">
-                <img src={{house.img}} class="card-img-top o-card-img" alt={{house.name}}>
-                <div class="card-body">
-                    <h5 class="card-title">{{house.name}} House</h5>
-                    <h6 class="card-subtitle mb-2"><strong>Menbers: </strong> <small>{{
-                            house.members}}</small></h6>
-                    <a [routerLink]="['/house-details',house.name]" class="btn btn-sm btn-outline-secondary"
-                        role="button">Go House</a>
-
-                </div>
-            </div>
-        </div>
-
+<div class="container">
+  <div class="card text-center o-card">
+    <img
+      src="{{ house.img }}"
+      class="card-img-top o-card-img"
+      alt="{{ house.name }}"
+    />
+    <div class="card-body">
+      <h5 class="card-title">{{ house.name }} House</h5>
+      <h6 class="card-subtitle mb-2">
+        <strong>Menbers: </strong> <small>{{ house.members }}</small>
+      </h6>
+      <a
+        [routerLink]="['/house', house.name]"
+        class="btn btn-sm btn-outline-secondary"
+        role="button"
+        >Go House</a
+      >
     </div>
+  </div>
 </div>

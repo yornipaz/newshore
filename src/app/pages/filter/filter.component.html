@@ -1,10 +1,41 @@
 <app-header></app-header>
 <div class="container">
-  <div class="row row-cols-1 row-cols-md-3">
-    <div
-      class="col-12 col-sm-6 col-lg-3 col-xl-3 mb-3"
-      *ngFor="let character of filterCharacter"
-    >
+  <h1 class="o-top">List of characters</h1>
+  <div class="row mb-2">
+    <div class="col-sm-6 d-flex justify-content-end">
+      <select   name="options" [(ngModel)]="optionFilter">
+        <option [value]="option" *ngFor="let option of options">
+          {{ option }}
+        </option>
+      </select>
+    </div>
+    <div class="col-sm-6">
+      <input
+        #inputSearch
+        autofocus
+        autocomplete
+        type="text"
+        class="form-control"
+        placeholder=" Typing search "
+        (keyup)="onSearch(inputSearch.value)"
+      />
+    </div>
+  </div>
+  <div class="row mb-2">
+    <div class="col d-flex justify-content-end">
+      <button type="button" class="btn btn-primary btn-sm"
+      (click)="prevPage()"
+      [disabled]="page===0"
+      >Previous</button>
+    </div>
+    <div class="col">
+      <button type="button" class="btn btn-primary btn-sm"  (click)="nextPage()"
+      [disabled]="(characters| filterCharacters:page:search:optionFilter).length===0"
+      >Next</button>
+    </div>
+  </div>
+  <div class="row d-flex flex-wrap">
+    <div class="col mb-3" *ngFor="let character of characters|filterCharacters:page:search:optionFilter">
       <app-character [character]="character"></app-character>
     </div>
   </div>
