@@ -1,4 +1,4 @@
-<app-header></app-header>
+
 <div class="container">
   <h1 class="o-top">List of characters</h1>
   <div class="row mb-2">
@@ -10,15 +10,8 @@
       </select>
     </div>
     <div class="col-sm-6">
-      <input
-        #inputSearch
-        autofocus
-        autocomplete
-        type="text"
-        class="form-control"
-        placeholder=" Typing search "
-        (keyup)="onSearch(inputSearch.value)"
-      />
+      <app-search-filter (search)="sendSearchFilter($event)"></app-search-filter>
+      
     </div>
   </div>
   <div class="row mb-2">
@@ -30,8 +23,7 @@
     </div>
     <div class="col">
       <button type="button" class="btn btn-primary btn-sm"  (click)="nextPage()"
-      [disabled]="(characters| filterCharacters:page:search:optionFilter).length===0"
-      >Next</button>
+      [disabled]="(characters| filterCharacters:page:search:optionFilter).length===0">Next</button>
     </div>
   </div>
   <div class="row d-flex flex-wrap">

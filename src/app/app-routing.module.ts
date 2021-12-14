@@ -1,8 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FilterComponent } from '@pages/filter/filter.component';
-import { HomeComponent } from '@pages/home/home.component';
-import { PlaceComponent } from '@pages/place/place.component';
 
 const routes: Routes = [
   {
@@ -11,9 +8,13 @@ const routes: Routes = [
     pathMatch: 'full',
   },
 
-  { path: 'houses', component: HomeComponent },
-  { path: 'house/:nameHouse', component: PlaceComponent },
-  { path: 'filter', component: FilterComponent },
+  {
+    path: 'houses',
+    loadChildren: () =>
+      import('@pages/houses/houses.module').then((m) => m.HousesModule),
+  },
+  { path: 'characters', loadChildren: () =>
+  import('@pages/characters/characters.module').then((m) => m.CharactersModule), },
 ];
 
 @NgModule({

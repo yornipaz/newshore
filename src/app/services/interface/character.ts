@@ -7,9 +7,7 @@ export interface Character {
   ancestry: string;
   eyeColour: string;
   hairColour: string;
-
   patronus: string;
-
   alive: boolean;
   image: string;
 }

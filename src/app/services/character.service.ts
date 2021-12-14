@@ -25,19 +25,7 @@ export class CharacterService {
 
     return value;
   }
-/**  filterCharacterByQuery(
-    query: string,
-    characters: Array<Character>
-  ): Array<Character> {
-    let queryCapitalize = this.capitalizeString(query);
-    let filterCharacter = characters.filter(
-      (data) =>
-        data.name.split(' ')[0].includes(queryCapitalize)  ||
-        data.name.split(' ')[1].includes(queryCapitalize)  ||
-        data.eyeColour.includes(query) 
-    );
-    return filterCharacter;
-  } */
+
   private transformCharacters(
     characters: Array<CharacterRequest>
   ): Array<Character> {
