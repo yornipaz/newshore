@@ -13,13 +13,14 @@ export class FilterComponent implements OnInit {
 
   characters: Character[] = [];
  
-  optionFilter: string;
+  optionFilter: keyof Character;
   options: string[];
   page: number = 0;
   items: number = 12;
   constructor(private api: CharacterService) {
     this.options = ['Select Filter','lastName','firstName','species','patronus','ancestry','yearOfBirth','hairColour','gender'];
-    this.optionFilter = 'Select Filter';
+    this.optionFilter='firstName';
+    
   }
 
   ngOnInit(): void {
